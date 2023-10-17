@@ -44,9 +44,10 @@ public class ColorChange : MonoBehaviour
     {
         WWWForm form = new WWWForm();
         form.AddField("nama_tim", ButtonController.player_name);
+        form.AddField("nama_game", "right_color");
         form.AddField("score", score.ToString());
 
-        UnityWebRequest www = UnityWebRequest.Post("https://irgl.petra.ac.id/main/api_cek_tim", form);
+        UnityWebRequest www = UnityWebRequest.Post("https://irgl.petra.ac.id/main/api_score", form);
         yield return www.SendWebRequest();
 
         if (www.result != UnityWebRequest.Result.Success)

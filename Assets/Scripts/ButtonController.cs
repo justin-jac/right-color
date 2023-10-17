@@ -54,7 +54,7 @@ public class ButtonController : MonoBehaviour
                     Debug.Log("nama ada");
                     valid = true;
                     textValidate.color = Color.green;
-                    textValidate.text = "";
+                    textValidate.text = "selamat datang " + player_name;
                 }
                 else
                 {
