@@ -14,7 +14,7 @@ public class ColorChange : MonoBehaviour
     public GameObject[] memoriesArray = { memory1, memory2, memory3, memory4 };
     public GameObject star;
     public Animator animator, transition;
-    public Text tutorial1, scoreText;
+    public Text tutorial1, scoreText, timerText;
     public GameObject tutorial2;
     int pointer = 0, sceneIndex;
     static int score;
@@ -99,7 +99,14 @@ public class ColorChange : MonoBehaviour
         if (sceneName != "0MainMenu")
         {
             scoreText.text = score.ToString();
+            ScoreScript.timer -= Time.deltaTime;
+            int realTimeInt = (int)ScoreScript.timer;
+            timerText.text = realTimeInt.ToString();
             //print("score : " + score);
+        }
+        if (ScoreScript.timer <= 0.0f)
+        {
+            SceneManager.LoadScene(9);
         }
 
         if (!(currentColor.Equals(grey)))

@@ -49,19 +49,20 @@ public class ButtonController : MonoBehaviour
             {
                 // Debug.Log(w.text);
 
-                if (w.text == "berhasil")
+                /*if (w.text == "berhasil")
                 {
-                    Debug.Log("nama ada");
-                    valid = true;
-                    textValidate.color = Color.green;
-                    textValidate.text = "selamat datang " + player_name;
+                    
                 }
                 else
                 {
                     textValidate.color = Color.red;
                     textValidate.text = "nama tim tidak tersedia";
-                }
-            }
+                }*/
+                Debug.Log("nama ada");
+                valid = true;
+                textValidate.color = Color.green;
+                textValidate.text = "selamat datang " + player_name;
+        }
         }
 
         w.Dispose();
